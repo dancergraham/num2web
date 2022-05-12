@@ -1,0 +1,29 @@
+<head>
+    <title>Num2Words</title></head>
+<body>
+<div class="flex-container">
+    <div><h1>Num2Words</h1>
+    </div>
+    <div>
+        <label for="number">Number</label>
+        <input id="number" type="number" onchange="getWords()" placeholder="Enter a number">
+    </div>
+    <div><label id="words"></label>
+    </div>
+</div>
+
+</body>
+<script>
+    function getWords() {
+        let number = document.getElementById("number").value;
+        document.getElementById("words").innerHTML = number;
+    }
+</script>
+<style>
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+</style>
