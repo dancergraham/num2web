@@ -1,7 +1,5 @@
-from flask import app
+from flask import Flask, app
 from num2words import num2words
-
-from flask import Flask
 
 app = Flask(__name__)
 
