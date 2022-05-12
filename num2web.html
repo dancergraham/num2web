@@ -16,7 +16,10 @@
 <script>
     function getWords() {
         let number = document.getElementById("number").value;
-        document.getElementById("words").innerHTML = number;
+        fetch('http://127.0.0.1:5000/' + number, {mode: 'no-cors'})
+            .then(response => response.text())
+            .then(text => document.getElementById("words").innerHTML = text)
+            .catch(error => console.log(error));
     }
 </script>
 <style>
