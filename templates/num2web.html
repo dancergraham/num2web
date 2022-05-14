@@ -1,9 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Num2Words</title></head>
+    <title>Num2Words</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='num2words.css') }}">
+    <script src="{{ url_for('static', filename='num2words.js') }}"></script>
+</head>
 <body>
 <div class="flex-container">
-    <div><h1>Num2Words</h1>
+    <div>
+        <h1>Num2Words</h1>
     </div>
+    <div>
+<select id="language" name="language">
+      {% for language in languages %}
+         <option value="{{ language }}">{{ language }}</option>
+      {% endfor %}
+</select> </div>
     <div>
         <label for="number">Number</label>
         <input id="number" type="number" onchange=getWords() placeholder="Enter a number">
@@ -11,23 +23,5 @@
     <div><label id="words"></label>
     </div>
 </div>
-
 </body>
-<script>
-    async function getWords() {
-        let number = document.getElementById("number").value;
-        let r = await fetch("http://localhost:5000/" + number, {mode: 'no-cors'});
-        let words = await r.text();
-        console.log("words", words);
-        document.getElementById("words").innerHTML = words;
-    }
-
-</script>
-<style>
-    .flex-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-</style>
+</html>
