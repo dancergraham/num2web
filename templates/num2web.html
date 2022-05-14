@@ -6,7 +6,7 @@
     </div>
     <div>
         <label for="number">Number</label>
-        <input id="number" type="number" onchange="getWords()" placeholder="Enter a number">
+        <input id="number" type="number" onchange=getWords() placeholder="Enter a number">
     </div>
     <div><label id="words"></label>
     </div>
@@ -14,12 +14,12 @@
 
 </body>
 <script>
-    function getWords() {
+    async function getWords() {
         let number = document.getElementById("number").value;
-        fetch('http://127.0.0.1:5000/' + number, {mode: 'no-cors'})
-            .then(response => response.text())
-            .then(text => document.getElementById("words").innerHTML = text)
-            .catch(error => console.log(error));
+        let r = await fetch("http://localhost:5000/" + number, {mode: 'no-cors'});
+        let words = await r.text();
+        console.log("words", words);
+        document.getElementById("words").innerHTML = words;
     }
 
 </script>

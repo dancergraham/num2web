@@ -1,3 +1,4 @@
+import flask
 from flask import Flask, app
 from num2words import num2words
 
@@ -10,7 +11,9 @@ def print_number(number):
         number,
         lang="fr",
     )
-    return words
+    response = flask.jsonify(data={"words": words})
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:63342/')
+    return response
 
 
 if __name__ == "__main__":
