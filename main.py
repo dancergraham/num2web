@@ -1,5 +1,5 @@
 import flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from num2words import num2words, CONVERTER_CLASSES
 
 app = Flask(__name__)
@@ -13,13 +13,17 @@ def home():
                            )
 
 
-@app.route("/<language>/<int:number>")
-def print_number(language, number):
-    words = num2words(
-        number,
-        lang=language,
-    )
-    return words
+@app.route("/num2words/", methods=["POST"])
+def print_number():
+    if request.method == 'POST':
+        data = request.json
+        number = float(data["number"])
+        language = data["language"]
+        words = num2words(
+            number,
+            lang=language,
+        )
+        return words
 
 
 if __name__ == "__main__":

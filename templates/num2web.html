@@ -11,7 +11,7 @@
         <h1>Num2Words</h1>
     </div>
     <div>
-<select id="language" name="language">
+<select id="language" name="language" onchange=getWords()>
       {% for language in languages %}
          <option value="{{ language }}">{{ language }}</option>
       {% endfor %}
