@@ -1,4 +1,3 @@
-import flask
 from flask import Flask, render_template, request
 from num2words import CONVERTER_CLASSES, num2words
 
@@ -22,7 +21,7 @@ def print_number():
             number,
             lang=language,
         )
-        return words
+        return words.capitalize()
 
 
 if __name__ == "__main__":

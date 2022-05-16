@@ -3,7 +3,7 @@ async function getWords() {
         number: document.getElementById("number").value,
         language: document.getElementById("language").value
         };
-    if (data.language == ""){return;}
+    if (data.number == ""){return;}
     let r = await fetch("http://localhost:5000/num2words/",
     {
         method: "POST",
