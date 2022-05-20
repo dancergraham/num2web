@@ -11,11 +11,13 @@
         <h1>Num2Words</h1>
     </div>
     <div>
-<select id="language" name="language" onchange=getWords()>
-      {% for language in languages %}
-         <option value="{{ language }}">{{ language }}</option>
-      {% endfor %}
-</select> </div>
+        <select id="language" name="language" onchange=getWords()>
+            {% for language in languages %}
+                <option {% if language == 'en' %} selected {% endif %} value="{{ language }}">{{ language }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
     <div>
         <label for="number">Number</label>
         <input id="number" type="number" onchange=getWords() placeholder="Enter a number">
