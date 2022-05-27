@@ -12,8 +12,8 @@
     </div>
     <div class="flex-item">
         <select id="language" name="language" onchange=getWords()>
-            {% for language in languages %}
-                <option {% if language == 'en' %} selected {% endif %} value="{{ language }}">{{ language }}
+            {% for code, language in languages|dictsort(by="value") %}
+                <option {% if code == 'br' %} selected {% endif %} value="{{ code }}">{{ language }}
                 </option>
             {% endfor %}
         </select>
