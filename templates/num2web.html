@@ -7,10 +7,10 @@
 </head>
 <body>
 <div class="flex-container">
-    <div>
+    <div class="flex-item">
         <h1>Num2Words</h1>
     </div>
-    <div>
+    <div class="flex-item">
         <select id="language" name="language" onchange=getWords()>
             {% for language in languages %}
                 <option {% if language == 'en' %} selected {% endif %} value="{{ language }}">{{ language }}
@@ -18,11 +18,11 @@
             {% endfor %}
         </select>
     </div>
-    <div>
+    <div class="flex-item">
         <label for="number">Number</label>
         <input id="number" type="number" onchange=getWords() placeholder="Enter a number">
     </div>
-    <div><label id="words"></label>
+    <div class="flex-item"><label id="words"></label>
     </div>
 </div>
 </body>
