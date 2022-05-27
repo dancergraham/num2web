@@ -1,17 +1,28 @@
-* {font-family: ui-sans-serif;
-color: rebeccapurple;
-size: 18;
-borderRadius: '0.5rem';
-background-color: LightGray;
+* {
+    font-family: sans-serif;
+    color: rebeccapurple;
+    background-color: LightGray;
 
 }
-#words {
-font-size: min(3vw, 36px);
+
+#number {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
 }
+
+#words {
+    font-size: min(3vw, 36px);
+    font-family: cursive;
+    color: black;
+
+}
+
 .flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: center;
     text-align: center;
 }
