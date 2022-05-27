@@ -4,7 +4,7 @@ async function getWords() {
         language: document.getElementById("language").value
         };
     if (data.number == ""){return;}
-    let r = await fetch("http://localhost:5000/num2words/",
+    let r = await fetch("/num2words/",
     {
         method: "POST",
     headers: {

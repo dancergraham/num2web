@@ -7,7 +7,6 @@ background-color: LightGray;
 }
 #words {
 font-size: min(3vw, 36px);
-
 }
 .flex-container {
     display: flex;
