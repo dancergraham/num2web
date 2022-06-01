@@ -6,6 +6,9 @@ async function getWords() {
     if (data.number == "") {
         return;
     }
+    if (!document.getElementById("number").checkValidity()){
+        return;
+    }
     let r = await fetch("/num2words/",
         {
             method: "POST",
